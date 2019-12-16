@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "688761384314",
+    "firebase_url": "https://fika-dbeb0.firebaseio.com",
+    "project_id": "fika-dbeb0",
+    "storage_bucket": "fika-dbeb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688761384314:android:04c4bb3a2654d62cd83ac3",
+        "android_client_info": {
+          "package_name": "com.example.fika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688761384314-ji6uv00tuok9d5gjlhmspjk3lciqthbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fika",
+            "certificate_hash": "1fa0846bd3856f29aca79ae798caad52c2249f13"
+          }
+        },
+        {
+          "client_id": "688761384314-bsd86mnl63cks2m343kk7tdo39382eqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuSPatKtPr5G_Ty9H9C6Kx_s6-WvtgIqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688761384314-bsd86mnl63cks2m343kk7tdo39382eqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titleHome"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+        android:layout_marginBottom="207dp"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/app_name"
+        android:textColor="@color/fikaColor"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/categoryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_sign_out"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="52dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="357dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="330dp"
+        android:left="18dp"
+        android:radius="10dp"
+        android:top="156dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleHome"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/home_title_img" />
+
+    <TextView
+        android:id="@+id/openTimeText"
+        android:layout_width="264dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="235dp"
+        android:gravity="left"
+        android:left="60dp"
+        android:padding="10dp"
+        android:radius="0dp"
+        android:text="@string/openTimeText"
+        android:textColor="@color/fikaColor"
+        android:textSize="20dp"
+        android:top="339dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/categoryText"
+        android:layout_width="260dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="277dp"
+        android:background="@color/fikaColor"
+        android:gravity="center|fill_horizontal|left"
+        android:left="10dp"
+        android:lineHeight="30dp"
+        android:padding="10dp"
+        android:radius="10dp"
+        android:text="Our Categories "
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:top="406dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleHome" />
+
+    <TextView
+        android:id="@+id/starterText"
+        android:layout_width="358dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="225dp"
+        android:background="@android:color/white"
+        android:gravity="left"
+        android:left="10dp"
+        android:lineHeight="30dp"
+        android:radius="7dp"
+        android:text="Starters And Salads "
+        android:textColor="@color/fikaColor"
+        android:textSize="20dp"
+        android:top="474dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_out" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="193dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="68dp"
+        android:padding="6dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/foodImage"
+            android:layout_width="164dp"
+            android:layout_height="59dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="6dp"
+            android:left="17dp"
+            android:radius="10dp"
+            android:top="531dp"
+            app:srcCompat="@drawable/bruschetta" />
+
+
+        <TextView
+            android:id="@+id/foodDesc"
+            android:layout_width="209dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="Sliced homemade baguette brushed with extra-virgin olive oil and toasted in the oven , topped with tomatoes, garlic, basil, extra-virgin olive oil and aged balsamic"
+            android:textColor="@android:color/black"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/foodTitle"
+            android:layout_width="189dp"
+            android:layout_height="36dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_above="@id/foodDesc"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:text="Bruschetta"
+            android:textColor="@color/fikaColor"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_sign_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="289dp"
+        android:background="@color/fikaColor"
+        android:text="Sign Out"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/starterText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/titleHome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
