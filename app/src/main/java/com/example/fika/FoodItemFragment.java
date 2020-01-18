@@ -14,6 +14,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -26,32 +29,12 @@ import java.util.Scanner;
 
 public class FoodItemFragment extends Fragment {
 
-    String JSON_STRING = "{\"menu\":{\"foodName\":\"Bruschetta\",\"foodDesc\":\"Sliced Onions,Cheese, Toasted bread,Garlic \",\"foodPrice\":120}}";
-    String name, desc;
-    double price;
-    TextView foodName, foodDesc, foodPrice;
-
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.food_item_layout, null);
-    }
-    public  void loadMenu(View view){
-        Resources resources = getResources();
-        InputStream inputStream = resources.openRawResource(R.raw.menu_list);
-        Scanner scanner = new Scanner(inputStream);
-        StringBuilder stringBuilder = new StringBuilder();
-        while (scanner.hasNextLine()){
-            stringBuilder.append(scanner.nextLine());
-            Log.d("build", String.valueOf(stringBuilder));
-        }
-        parseJSON(stringBuilder.toString());
-    }
-
-    private void parseJSON(String toString) {
+        return inflater.inflate(R.layout.fragment_fooditem, null);
     }
 
 }

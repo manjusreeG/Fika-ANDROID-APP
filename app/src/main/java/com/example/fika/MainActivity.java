@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     private List<Menu> menuList = new ArrayList<Menu>();
     private ListView listView;
-    private FoodItemAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +38,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         //loading the default fragment
         loadFragment(new HomeFragment());
-
-        listView = (ListView) findViewById(R.id.list_menu);
-        /*adapter = new FoodItemAdapter(this, menuList);
-        listView.setAdapter(adapter);*/
 
         //getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.nav_view);
