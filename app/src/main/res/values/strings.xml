@@ -4,4 +4,6 @@
     <string name="title_dashboard">Tracking</string>
     <string name="title_notifications">My Profile</string>
     <string name="openTimeText">Open From 10am - 10pm</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
