@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <ListView
-        android:id="@+id/list_menu"
+        android:id="@+id/menu_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="@color/fikaColor"
