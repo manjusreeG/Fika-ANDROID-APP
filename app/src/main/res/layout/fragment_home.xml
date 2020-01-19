@@ -104,6 +104,6 @@
                 android:text="Main Course"
                 android:textColor="@color/fikaColor"
                 android:textSize="20dp" />
-            
+
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

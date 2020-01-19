@@ -6,23 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+
 import java.util.ArrayList;
-import java.util.List;
 
-public class CategoriesItemAdapter extends BaseAdapter {
-
-    private Activity activity;
-    private LayoutInflater inflater;
+public class FoodItemAdapter extends BaseAdapter {
     private ArrayList<CategorieModel> menuItems;
+    private LayoutInflater inflater;
+    private Activity activity;
 
-    public CategoriesItemAdapter(Activity activity, ArrayList<CategorieModel> menuItems) {
+    public FoodItemAdapter(Activity activity, ArrayList<CategorieModel> menuItems) {
         this.activity = activity;
         this.menuItems = menuItems;
     }
-
     @Override
     public int getCount() {
         return menuItems.size();
@@ -44,17 +43,15 @@ public class CategoriesItemAdapter extends BaseAdapter {
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.categorie_item_layout, parent,false);
+            convertView = inflater.inflate(R.layout.menu_list_layout, parent,false);
 
-        TextView foodName = (TextView) convertView.findViewById(R.id.categorieTitle);
-        TextView foodDesc = (TextView) convertView.findViewById(R.id.categorieDesc);
-        TextView foodPrice = (TextView) convertView.findViewById(R.id.categoriePrice);
+        TextView foodName = (TextView) convertView.findViewById(R.id.menu_name);
+        TextView foodPrice = (TextView) convertView.findViewById(R.id.menu_price);
 
         // getting menu data for the row
         CategorieModel m = menuItems.get(position);
 
         foodName.setText(m.getTitle());
-        foodDesc.setText(m.getDescription());
         foodPrice.setText(m.getPrice()+"€");
 
         return convertView;

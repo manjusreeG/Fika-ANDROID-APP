@@ -19,6 +19,8 @@ public class CategorieModel {
 
     String title;
     String description;
+
+    String price;
     ArrayList<CategorieModel> list;
 
     CategoriesItemAdapter adapter;
@@ -37,6 +39,11 @@ public class CategorieModel {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+    public String getPrice() { return price; }
+
+    public void setPrice(String price) { this.price = price; }
 
     public ArrayList<CategorieModel> list(){
         return  list;

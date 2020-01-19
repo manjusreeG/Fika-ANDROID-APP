@@ -61,29 +61,21 @@ public class HomeFragment extends Fragment {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                /*String foodName = dataSnapshot.child("foodName").getValue().toString();
-                //String foodDesc = dataSnapshot.child("foodDesc").getValue().toString();
-
-                Log.d("foodName",foodName);
-                Log.d("food",foodDesc);
-                CategorieModel item1= new CategorieModel();
-                item1.setTitle(foodName);
-                item1.setDescription(foodDesc);
-                list.add(item1);*/
 
                     list.clear();
                     Iterable<DataSnapshot> data = dataSnapshot.getChildren();
                     Iterator<DataSnapshot> da = data.iterator();
                     while (da.hasNext()){
                         DataSnapshot menu = da.next();
-                        Log.d("foodName",dataSnapshot.toString());
+                        /*Log.d("foodName",dataSnapshot.toString());
                         Log.d("value",dataSnapshot.getValue().toString());
                         Log.d("foodName",menu.child("foodName").getValue().toString());
-                        Log.d("foodDesc",menu.child("foodDesc").getValue().toString());
+                        Log.d("foodDesc",menu.child("foodDesc").getValue().toString());*/
 
                         CategorieModel item1= new CategorieModel();
                         item1.setTitle(menu.child("foodName").getValue().toString());
                         item1.setDescription(menu.child("foodDesc").getValue().toString());
+                        item1.setPrice(menu.child("foodPrice").getValue().toString());
                         list.add(item1);
                     }
                     adapter.notifyDataSetChanged();
