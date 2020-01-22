@@ -21,6 +21,9 @@ public class CategorieModel {
     String description;
 
     String price;
+
+    String image;
+
     ArrayList<CategorieModel> list;
 
     CategoriesItemAdapter adapter;
@@ -44,6 +47,10 @@ public class CategorieModel {
     public String getPrice() { return price; }
 
     public void setPrice(String price) { this.price = price; }
+
+    public String getImage() { return image; }
+
+    public void setImage(String image) { this.image = image; }
 
     public ArrayList<CategorieModel> list(){
         return  list;
