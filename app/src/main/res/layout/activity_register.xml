@@ -11,9 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Register"
-        android:textColor="@color/colorBlack"
-        android:textSize="25sp"/>
+        android:text="Create Account"
+        android:textColor="@color/fikaColor"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -25,7 +26,6 @@
             android:id="@+id/emailEt"
             android:inputType="textEmailAddress"
             android:hint="Email"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
