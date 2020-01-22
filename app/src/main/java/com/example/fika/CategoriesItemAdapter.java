@@ -47,15 +47,15 @@ public class CategoriesItemAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.categorie_item_layout, parent,false);
 
         TextView foodName = (TextView) convertView.findViewById(R.id.categorieTitle);
-        //TextView foodDesc = (TextView) convertView.findViewById(R.id.foodDesc);
-        TextView foodPrice = (TextView) convertView.findViewById(R.id.categorieDesc);
+        TextView foodDesc = (TextView) convertView.findViewById(R.id.categorieDesc);
+        TextView foodPrice = (TextView) convertView.findViewById(R.id.categoriePrice);
 
         // getting menu data for the row
         CategorieModel m = menuItems.get(position);
 
         foodName.setText(m.getTitle());
-        //foodDesc.setText("Rating: " + String.valueOf(m.getFoodDesc()));
-        foodPrice.setText(m.getDescription());
+        foodDesc.setText(m.getDescription());
+        foodPrice.setText(m.getPrice()+"€");
 
         return convertView;
     }
