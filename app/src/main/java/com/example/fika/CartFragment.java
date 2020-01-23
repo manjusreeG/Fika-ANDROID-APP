@@ -2,6 +2,7 @@ package com.example.fika;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -66,14 +69,7 @@ public class CartFragment extends Fragment {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 showAddressAlert();
-                
-               /* // Creating Order request
-                Request request = new Request("0293713213","John",
-                        address,
-                        txtTotalPrice.getText().toString(),
-                        cart);*/
             }
         });
 
@@ -102,12 +98,15 @@ public class CartFragment extends Fragment {
                         enterAddress.getText().toString(),
                         txtTotalPrice.getText().toString(),
                         cart);
-
             requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
 
             new Database(getContext()).cleanCart();
             Toast.makeText(CartFragment.super.getActivity(),"Thank you", Toast.LENGTH_SHORT).show();
             //finish();
+                FragmentTransaction fragment = getFragmentManager().beginTransaction();
+                fragment.remove(CartFragment.this);
+                fragment.add(R.id.fragment_container,new PaymentFragment());
+                fragment.commit();
             };
         });
 
@@ -133,7 +132,6 @@ public class CartFragment extends Fragment {
 
         Locale locale = new Locale("en","US");
         NumberFormat frmt = NumberFormat.getCurrencyInstance(locale);
-
 
         txtTotalPrice.setText(frmt.format(total));
 
