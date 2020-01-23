@@ -44,6 +44,7 @@ public class FoodItemFragment extends Fragment {
     ArrayList<CategorieModel> list;
     private FoodItemAdapter adapter;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class FoodItemFragment extends Fragment {
             adapter = new FoodItemAdapter(FoodItemFragment.super.getActivity(), list);
             menuList.setAdapter(adapter);
         }
+
         return view;
     }
 
@@ -66,29 +68,21 @@ public class FoodItemFragment extends Fragment {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                /*String foodName = dataSnapshot.child("foodName").getValue().toString();
-                //String foodDesc = dataSnapshot.child("foodDesc").getValue().toString();
-
-                Log.d("foodName",foodName);
-                Log.d("food",foodDesc);
-                CategorieModel item1= new CategorieModel();
-                item1.setTitle(foodName);
-                item1.setDescription(foodDesc);
-                list.add(item1);*/
-
                     list.clear();
                     Iterable<DataSnapshot> data = dataSnapshot.getChildren();
                     Iterator<DataSnapshot> da = data.iterator();
                     while (da.hasNext()){
                         DataSnapshot menu = da.next();
-                        Log.d("foodName",dataSnapshot.toString());
+                        /*Log.d("foodName",dataSnapshot.toString());
                         Log.d("value",dataSnapshot.getValue().toString());
                         Log.d("foodName",menu.child("foodName").getValue().toString());
                         Log.d("foodDesc",menu.child("foodDesc").getValue().toString());
+                        Log.d("foodDesc",menu.child("foodImg").getValue().toString());*/
 
                         CategorieModel item1= new CategorieModel();
                         item1.setTitle(menu.child("foodName").getValue().toString());
                         item1.setPrice(menu.child("foodPrice").getValue().toString());
+                        item1.setImage(menu.child("foodImg").getValue().toString());
                         list.add(item1);
                     }
                     adapter.notifyDataSetChanged();
