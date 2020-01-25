@@ -8,19 +8,19 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <com.braintreepayments.cardform.view.CardForm
+        android:id="@+id/card_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Payy" />
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/paymentBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3in"
-        android:textColor="@color/colorWhite"
         android:background="@color/fikaColor"
-        android:textSize="20dp"
-        android:text="Pay Now" />
+        android:text="Pay Now"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp" />
 
 </FrameLayout>
