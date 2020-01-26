@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/food_order" />
+        android:src="@drawable/logo" />
 
     <Button
         android:id="@+id/register_btn"

@@ -89,6 +89,10 @@ public class PaymentFragment extends Fragment {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
                     Toast.makeText(PaymentFragment.super.getActivity(), "Thank you for order", Toast.LENGTH_LONG).show();
+                    FragmentTransaction fragment = getFragmentManager().beginTransaction();
+                    fragment.remove(PaymentFragment.this);
+                    fragment.add(R.id.fragment_container,new HomeFragment());
+                    fragment.commit();
                 }
             });
             alertBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
