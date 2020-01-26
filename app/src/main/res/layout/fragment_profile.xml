@@ -33,6 +33,7 @@
                 android:text="Name"
                 android:textStyle="bold"
                 android:textSize="20dp"
+                android:textColor="@color/colorWhite"
                 android:textAlignment="center"
                 android:background="@color/fikaColor"
                 android:padding="10dp"
@@ -48,7 +49,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 android:text="Name"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/fikaColor"/>
 
             <TextView
                 android:id="@+id/emailEt"
@@ -60,6 +61,7 @@
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:layout_below="@+id/nameTv"
+                android:textColor="@color/colorWhite"
                 android:background="@color/fikaColor"
                 android:padding="10dp"
                 />
@@ -74,7 +76,7 @@
                 android:layout_below="@id/emailEt"
                 android:text="Email"
                 android:textSize="20sp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/fikaColor"/>
 
             <TextView
                 android:id="@+id/phoneEt"
@@ -85,6 +87,7 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textAlignment="center"
+                android:textColor="@color/colorWhite"
                 android:layout_below="@+id/emailTv"
                 android:background="@color/fikaColor"
                 android:padding="10dp"
@@ -100,7 +103,7 @@
                 android:text="Phone Number"
                 android:layout_below="@+id/phoneEt"
                 android:textSize="20sp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/fikaColor"/>
 
             <TextView
                 android:id="@+id/addressEt"
@@ -111,6 +114,7 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textAlignment="center"
+                android:textColor="@color/colorWhite"
                 android:layout_below="@+id/phoneTv"
                 android:background="@color/fikaColor"
                 android:padding="10dp"
@@ -123,10 +127,10 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
-                android:text="address"
+                android:text="Address"
                 android:layout_below="@+id/addressEt"
                 android:textSize="20sp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/fikaColor"/>
 
 
         </RelativeLayout>
