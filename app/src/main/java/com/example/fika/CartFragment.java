@@ -2,7 +2,9 @@ package com.example.fika;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +17,14 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fika.Database.CartAdapter;
 import com.example.fika.Database.Database;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -42,6 +47,8 @@ public class CartFragment extends Fragment {
     Button orderBtn;
 
     List<Order> cart = new ArrayList<>();
+
+    FloatingActionButton removeCartBtn;
 
     CartAdapter cartAdapter;
 
@@ -66,18 +73,18 @@ public class CartFragment extends Fragment {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 showAddressAlert();
-                
-               /* // Creating Order request
-                Request request = new Request("0293713213","John",
-                        address,
-                        txtTotalPrice.getText().toString(),
-                        cart);*/
             }
         });
-
         loadCartItems();
+        removeCartBtn = view.findViewById(R.id.removeCartBtn);
+        removeCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Database(getContext()).cleanCart();
+                loadCartItems();
+            }
+        });
 
         return view;
 
@@ -102,12 +109,15 @@ public class CartFragment extends Fragment {
                         enterAddress.getText().toString(),
                         txtTotalPrice.getText().toString(),
                         cart);
-
             requests.child(String.valueOf(System.currentTimeMillis())).setValue(request);
 
             new Database(getContext()).cleanCart();
-            Toast.makeText(CartFragment.super.getActivity(),"Thank you", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CartFragment.super.getActivity(),"To confirm your order, you are navigated to Payment page.", Toast.LENGTH_SHORT).show();
             //finish();
+                FragmentTransaction fragment = getFragmentManager().beginTransaction();
+                fragment.remove(CartFragment.this);
+                fragment.add(R.id.fragment_container,new PaymentFragment());
+                fragment.commit();
             };
         });
 
@@ -124,6 +134,7 @@ public class CartFragment extends Fragment {
 
     private void loadCartItems() {
         cart = new Database(getActivity()).getCartDetails();
+        Log.d("cart size", String.valueOf(cart.size()));
         cartAdapter = new CartAdapter(cart,getActivity());
         recyclerView.setAdapter(cartAdapter);
 
@@ -133,7 +144,6 @@ public class CartFragment extends Fragment {
 
         Locale locale = new Locale("en","US");
         NumberFormat frmt = NumberFormat.getCurrencyInstance(locale);
-
 
         txtTotalPrice.setText(frmt.format(total));
 

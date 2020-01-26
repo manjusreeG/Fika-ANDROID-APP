@@ -4,6 +4,8 @@
     <string name="title_dashboard">Tracking</string>
     <string name="title_notifications">My Profile</string>
     <string name="openTimeText">Open From 10am - 10pm</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Fika</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
