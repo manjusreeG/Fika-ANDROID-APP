@@ -24,6 +24,16 @@ public class CategorieModel {
 
     String image;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    String type;
+
     ArrayList<CategorieModel> list;
 
     CategoriesItemAdapter adapter;

@@ -64,7 +64,7 @@ public class FoodItemAdapter extends BaseAdapter {
         final CategorieModel m = menuItems.get(position);
 
         foodName.setText(m.getTitle());
-        foodPrice.setText(m.getPrice());
+        foodPrice.setText("$ "+m.getPrice());
         /*String url = "http://ashfoodlover.com/wp-content/uploads/2019/10/Screenshot_20190922-104529__01.jpg";
         Picasso.get().load(url).fit().into(foodImage, new Callback() {
 

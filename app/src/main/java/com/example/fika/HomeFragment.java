@@ -76,6 +76,7 @@ public class HomeFragment extends Fragment {
                         item1.setTitle(menu.child("foodName").getValue().toString());
                         item1.setDescription(menu.child("foodDesc").getValue().toString());
                         item1.setPrice(menu.child("foodPrice").getValue().toString());
+                        item1.setType(menu.child("foodType").getValue().toString());
                         list.add(item1);
                     }
                     adapter.notifyDataSetChanged();

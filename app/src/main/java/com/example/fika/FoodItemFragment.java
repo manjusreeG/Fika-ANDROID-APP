@@ -51,13 +51,11 @@ public class FoodItemFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_fooditem, null);
         menuList = view.findViewById(R.id.menuListView);
         list = new ArrayList<>();
-        Log.d("List", String.valueOf(list));
         loadData();
         if(list != null){
             adapter = new FoodItemAdapter(FoodItemFragment.super.getActivity(), list);
             menuList.setAdapter(adapter);
         }
-
         return view;
     }
 
@@ -73,16 +71,10 @@ public class FoodItemFragment extends Fragment {
                     Iterator<DataSnapshot> da = data.iterator();
                     while (da.hasNext()){
                         DataSnapshot menu = da.next();
-                        /*Log.d("foodName",dataSnapshot.toString());
-                        Log.d("value",dataSnapshot.getValue().toString());
-                        Log.d("foodName",menu.child("foodName").getValue().toString());
-                        Log.d("foodDesc",menu.child("foodDesc").getValue().toString());
-                        Log.d("foodDesc",menu.child("foodImg").getValue().toString());*/
 
                         CategorieModel item1= new CategorieModel();
                         item1.setTitle(menu.child("foodName").getValue().toString());
                         item1.setPrice(menu.child("foodPrice").getValue().toString());
-                        item1.setImage(menu.child("foodImg").getValue().toString());
                         list.add(item1);
                     }
                     adapter.notifyDataSetChanged();

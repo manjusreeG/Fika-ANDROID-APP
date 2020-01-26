@@ -6,11 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CategoriesItemAdapter extends BaseAdapter {
 
@@ -48,14 +46,14 @@ public class CategoriesItemAdapter extends BaseAdapter {
 
         TextView foodName = (TextView) convertView.findViewById(R.id.categorieTitle);
         TextView foodDesc = (TextView) convertView.findViewById(R.id.categorieDesc);
-        TextView foodPrice = (TextView) convertView.findViewById(R.id.categoriePrice);
+        TextView foodType = (TextView) convertView.findViewById(R.id.categorieType);
 
         // getting menu data for the row
         CategorieModel m = menuItems.get(position);
 
         foodName.setText(m.getTitle());
         foodDesc.setText(m.getDescription());
-        foodPrice.setText(m.getPrice()+"€");
+        foodType.setText(m.getType());
 
         return convertView;
     }
